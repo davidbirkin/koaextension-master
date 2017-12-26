@@ -69,7 +69,7 @@ $(function() {
 function gettotalwood(){ 
     var total = 0;
     var w1r = document.getElementById('wood1').value * 1000;
-    var w2r = document.getElementById('wood2').value * 2000;
+    var w2r = document.getElementById('wood2').value * 3000;
     var w3r = document.getElementById('wood3').value * 5000;
     var w4r = document.getElementById('wood4').value * 10000;
     var w5r = document.getElementById('wood5').value * 30000;

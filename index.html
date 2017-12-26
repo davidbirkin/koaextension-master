@@ -6,7 +6,7 @@
  -->
 <html>
   <head>
-    <title>KOA Resource Checker</title>
+    <title>KOA Resource CheckerB</title>
     <style type="text/css">
       body {
         min-width: 200px;
@@ -139,13 +139,74 @@
         <!-- THIS DIV HERE IS USED TO CALCULATE RESOURCES AND SHOULD ONLY APPEAR 
             ONCE THE "LOOKUP UPGRADES" RADIO BUTTON HAS BEEN SELECTED -->
         <div id="lookupupgrades">
-              Hello World
+              <select id="building_type">
+			    <option value="Barracks">Barracks</option>
+				<option value="Dragon Lair">Dragon Lair</option>
+				<option value="Embassy">Embassy</option>
+				<option value="Farm">Farm</option>
+				<option value="Forge">Forge</option>
+				<option value="Hall of War">Hall of War</option>
+				<option value="Hospital">Hospital</option>
+				<option value="Iron Mine">Iron Mine</option>
+				<option value="Military Tent">Military Tent</option>
+				<option value="Range">Range</option>
+				<option value="Saw Mill">Saw Mill</option>
+				<option value="Siege Workshop">Siege Workshop</option>
+				<option value="Silver Mine">Silver Mine</option>
+				<option value="Stables">Stables</option>
+				<option value="Storehouse">Storehouse</option>
+				<option value="Stronghold">Stronghold</option>
+				<option value="Trading Post">Trading Post</option>
+				<option value="Trap Factory">Trap Factory</option>
+				<option value="University">University</option>
+				<option value="Walls">Walls</option>
+				<option value="Watchtower">Watchtower</option>
+				<option value="Wishing Well">Wishing Well</option>
+			  </select>
+			  
+			  <select id="building_level">
+				<option value="1">1</option>
+				<option value="2">2</option>
+				<option value="3">3</option>
+				<option value="4">4</option>
+				<option value="5">5</option>
+				<option value="6">6</option>
+				<option value="7">7</option>
+				<option value="8">8</option>
+				<option value="9">9</option>
+				<option value="10">10</option>
+				<option value="11">11</option>
+				<option value="12">12</option>
+				<option value="13">13</option>
+				<option value="14">14</option>
+				<option value="15">15</option>
+				<option value="16">16</option>
+				<option value="17">17</option>
+				<option value="18">18</option>
+				<option value="19">19</option>
+				<option value="20">20</option>
+				<option value="21">21</option>
+				<option value="22">22</option>
+				<option value="23">23</option>
+				<option value="24">24</option>
+				<option value="25">25</option>
+				<option value="26">26</option>
+				<option value="27">27</option>
+				<option value="28">28</option>
+				<option value="29">29</option>
+				<option value="30">30</option>
+				<option value="31">31</option>
+				<option value="32">32</option>
+				<option value="33">33</option>
+				<option value="34">34</option>
+				<option value="35">35</option>
+			  </select>
+			  <div id="show-data">
+		
+			</div>
+			<button id="get-data">Get Data</button>
         </div>
-                  
-        <div class="container">
-
-          </div>   
-          <input id="get" type="submit" value="Get">
+		
       </div>
     </div>
   </body>

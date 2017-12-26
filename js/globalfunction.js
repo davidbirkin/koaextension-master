@@ -14,8 +14,16 @@ $(document).ready(function() {
 					if (myjson[i].id == btv + " " + blv){
 						$('#show-data').html('<p> Building: ' + myjson[i].id + '</p>');
 						$('#show-data').append('<p>Requirement 1: ' + myjson[i].pre1 + '</p>');
-						$('#show-data').append('<p>Requirement 2: ' + myjson[i].pre2 + '</p>');
-						$('#show-data').append('<p>Requirement 3: ' + myjson[i].pre3 + '</p>');
+                        if (myjson[i].pre2 == "-") {
+                            // do nothing 
+                        } else {
+                            $('#show-data').append('<p>Requirement 2: ' + myjson[i].pre2 + '</p>');
+                        }
+                        if (myjson[i].pre3 == "-") {
+                            // do nothing 
+                        } else {
+                            $('#show-data').append('<p>Requirement 3: ' + myjson[i].pre3 + '</p>');
+                        }
 						$('#show-data').append('<hr /><p>Food Req: ' + numberWithCommas(myjson[i].food) + '</p>');
 						$('#show-data').append('<p>Wood Req: ' + numberWithCommas(myjson[i].wood) + '</p>');
 						$('#show-data').append('<p>Iron Req: ' + numberWithCommas(myjson[i].iron) + '</p>');

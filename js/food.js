@@ -69,7 +69,7 @@ $(function() {
 function gettotalfood(){ 
     var total = 0;
     var f1r = document.getElementById('food1').value * 1000;
-    var f2r = document.getElementById('food2').value * 2000;
+    var f2r = document.getElementById('food2').value * 3000;
     var f3r = document.getElementById('food3').value * 5000;
     var f4r = document.getElementById('food4').value * 10000;
     var f5r = document.getElementById('food5').value * 30000;

@@ -66,6 +66,24 @@ $(function() {
     });
 });
 
+$(function() {
+    $("#wood8").on('keyup change mousedown', function (){
+        var w8m = document.getElementById('wood8').value;
+        var w8r = w8m * 500000;
+        document.getElementById('w8').innerHTML = numberWithCommas(w8r);
+        gettotalwood();
+    });
+});
+
+$(function() {
+    $("#wood9").on('keyup change mousedown', function (){
+        var w9m = document.getElementById('wood9').value;
+        var w9r = w9m * 1500000;
+        document.getElementById('w9').innerHTML = numberWithCommas(w9r);
+        gettotalwood();
+    });
+});w
+
 function gettotalwood(){ 
     var total = 0;
     var w1r = document.getElementById('wood1').value * 1000;
@@ -75,6 +93,8 @@ function gettotalwood(){
     var w5r = document.getElementById('wood5').value * 30000;
     var w6r = document.getElementById('wood6').value * 50000;
     var w7r = document.getElementById('wood7').value * 150000;
-    total = total + w1r + w2r + w3r + w4r + w5r + w6r + w7r;
+    var w8r = document.getElementById('wood8').value * 500000;
+    var w9r = document.getElementById('wood9').value * 1500000;
+    total = total + w1r + w2r + w3r + w4r + w5r + w6r + w7r + w8r + w9r;
     document.getElementById('wt').innerHTML = numberWithCommas(total);
 };

@@ -1,0 +1,167 @@
+<!doctype html>
+<!--
+ This page is shown when the extension button is clicked, because the
+ "browser_action" field in manifest.json contains the "default_popup" key with
+ value "popup.html".
+ -->
+<html>
+  <head>
+    <title>KOA Resource Companion</title>
+    <!--
+      - JavaScript and HTML must be in separate files: see our Content Security
+      - Policy documentation[1] for details and explanation.
+      -
+      - [1]: https://developer.chrome.com/extensions/contentSecurityPolicy
+    -->
+    <script src="js/jquery-3.2.1.min.js"></script>
+    <script src="js/globalfunction.js"></script>
+    <script src="js/food.js"></script>
+    <script src="js/wood.js"></script>
+    <script src="js/iron.js"></script>
+    <script src="js/silver.js"></script>
+    <link rel="stylesheet" type="text/css" href="css/style.css">
+  </head>
+  <body>
+    <h1>King of Avalon Companion!</h1>
+    <div id="container">
+      <div id="selection">
+          What would you like to do?<br/>
+          <input type="radio" name="calcrss" id="calcradio"/>&nbsp;Calculate RSS
+          <input type="radio" name="calcrss" id="lookupradio"/>&nbsp;Lookup Upgrades<br/><hr/>
+        <!-- THIS DIV HERE IS USED TO CALCULATE RESOURCES AND SHOULD ONLY APPEAR 
+            ONCE THE "CALCULATE RSS" RADIO BUTTON HAS BEEN SELECTED -->
+        <div id="calcrss">
+            <center><span>Select your resourse!</span></center>
+            <center>
+                <select id="rssdropdown">
+                  <option selected disabled hidden value=''></option>
+                  <option value="food">Food</option>
+                  <option value="wood">Wood</option>
+                  <option value="iron">Iron</option>
+                  <option value="silver">Silver</option>
+                </select>
+            </center>
+            <hr />
+            <div id="food" class="resource" style="display:none">
+              <span>Enter Food Denominations</span><hr />
+              <div><span class='amount'>1000 x </span><input type="number" class="amountinput" id="food1" value="0"/><span id="f1" class="totalmount"></span></div><hr />
+              <div><span class='amount'>3000 x </span><input type="number" class="amountinput" id="food2" value="0"/><span id="f2" class="totalmount"></span></div><hr />
+              <div><span class='amount'>5000 x </span><input type="number" class="amountinput" id="food3" value="0"/><span id="f3" class="totalmount"></span></div><hr />
+              <div><span class='amount'>10,000 x </span><input type="number" class="amountinput" id="food4" value="0"/><span id="f4" class="totalmount"></span></div><hr />
+              <div><span class='amount'>30,000 x </span><input type="number" class="amountinput" id="food5" value="0"/><span id="f5" class="totalmount"></span></div><hr />
+              <div><span class='amount'>50,000 x </span><input type="number" class="amountinput" id="food6" value="0"/><span id="f6" class="totalmount"></span></div><hr />
+              <div><span class='amount'>150,000 x </span><input type="number" class="amountinput" id="food7" value="0"/><span id="f7" class="totalmount"></span></div><hr />
+              <div><span class="amountinput">Total : </span><span id="ft" class="totalmount"></span></div><hr />    
+            </div>
+            <div id="wood" class="resource" style="display:none">
+              <span>Enter Wood Denominations</span><hr />
+              <div><span class='amount'>1000 x </span><input type="number" class="amountinput" id="wood1" value="0"/><span id="w1" class="totalmount"></span></div><hr />
+              <div><span class='amount'>3000 x </span><input type="number" class="amountinput" id="wood2" value="0"/><span id="w2" class="totalmount"></span></div><hr />
+              <div><span class='amount'>5000 x </span><input type="number" class="amountinput" id="wood3" value="0"/><span id="w3" class="totalmount"></span></div><hr />
+              <div><span class='amount'>10,000 x </span><input type="number" class="amountinput" id="wood4" value="0"/><span id="w4" class="totalmount"></span></div><hr />
+              <div><span class='amount'>30,000 x </span><input type="number" class="amountinput" id="wood5" value="0"/><span id="w5" class="totalmount"></span></div><hr />
+              <div><span class='amount'>50,000 x </span><input type="number" class="amountinput" id="wood6" value="0"/><span id="w6" class="totalmount"></span></div><hr />
+              <div><span class='amount'>150,000 x </span><input type="number" class="amountinput" id="wood7" value="0"/><span id="w7" class="totalmount"></span></div><hr />
+              <div><span class="amountinput">Total: </span><span id="wt" class="totalmount"></span></div><hr />
+            </div>
+            <div id="iron" class="resource" style="display:none">
+              <span>Enter Iron Denominations</span><hr />
+              <div><span class='amount'>200 x </span><input type="number" class="amountinput" id="iron1" value="0"/><span id="i1" class="totalmount"></span></div><hr />
+              <div><span class='amount'>600 x </span><input type="number" class="amountinput" id="iron2" value="0"/><span id="i2" class="totalmount"></span></div><hr />
+              <div><span class='amount'>1000 x </span><input type="number" class="amountinput" id="iron3" value="0"/><span id="i3" class="totalmount"></span></div><hr />
+              <div><span class='amount'>2000 x </span><input type="number" class="amountinput" id="iron4" value="0"/><span id="i4" class="totalmount"></span></div><hr />
+              <div><span class='amount'>6000 x </span><input type="number" class="amountinput" id="iron5" value="0"/><span id="i5" class="totalmount"></span></div><hr />
+              <div><span class='amount'>10,000 x </span><input type="number" class="amountinput" id="iron6" value="0"/><span id="i6" class="totalmount"></span></div><hr />
+              <div><span class='amount'>30,000 x </span><input type="number" class="amountinput" id="iron7" value="0"/><span id="i7" class="totalmount"></span></div><hr />
+              <div><span class="amountinput">Total: </span><span id="it" class="totalmount"></span></div><hr />
+            </div>
+            <div id="silver" class="resource" style="display:none">
+              <span>Enter Silver Denominations</span><hr />
+              <div><span class='amount'>50 x </span><input type="number" class="amountinput" id="silver1" value="0"/><span id="s1" class="totalmount"></span></div><hr />
+              <div><span class='amount'>150 x </span><input type="number" class="amountinput" id="silver2"  value="0"/><span id="s2" class="totalmount"></span></div><hr />
+              <div><span class='amount'>250 x </span><input type="number" class="amountinput" id="silver3" value="0"/><span id="s3" class="totalmount"></span></div><hr />
+              <div><span class='amount'>500 x </span><input type="number" class="amountinput" id="silver4"  value="0"/><span id="s4" class="totalmount"></span></div><hr />
+              <div><span class='amount'>1500 x </span><input type="number" class="amountinput" id="silver5" value="0"/><span id="s5" class="totalmount"></span></div><hr />
+              <div><span class='amount'>2500 x </span><input type="number" class="amountinput" id="silver6" value="0"/><span id="s6" class="totalmount"></span></div><hr />
+              <div><span class="amountinput">Total: </span><span id="st" class="totalmount"></span></div><hr />
+            </div>
+        </div>
+        <!-- THIS DIV HERE IS USED TO CALCULATE RESOURCES AND SHOULD ONLY APPEAR 
+            ONCE THE "LOOKUP UPGRADES" RADIO BUTTON HAS BEEN SELECTED -->
+        <div id="lookupupgrades">
+              <select id="building_type">
+			    <option value="Barracks">Barracks</option>
+				<option value="Dragon Lair">Dragon Lair</option>
+				<option value="Embassy">Embassy</option>
+				<option value="Farm">Farm</option>
+				<option value="Forge">Forge</option>
+				<option value="Hall of War">Hall of War</option>
+				<option value="Hospital">Hospital</option>
+				<option value="Iron Mine">Iron Mine</option>
+				<option value="Military Tent">Military Tent</option>
+				<option value="Range">Range</option>
+				<option value="Saw Mill">Saw Mill</option>
+				<option value="Siege Workshop">Siege Workshop</option>
+				<option value="Silver Mine">Silver Mine</option>
+				<option value="Stables">Stables</option>
+				<option value="Storehouse">Storehouse</option>
+				<option value="Stronghold">Stronghold</option>
+				<option value="Trading Post">Trading Post</option>
+				<option value="Trap Factory">Trap Factory</option>
+				<option value="University">University</option>
+				<option value="Walls">Walls</option>
+				<option value="Watchtower">Watchtower</option>
+				<option value="Wishing Well">Wishing Well</option>
+			  </select>
+			  
+			  <select id="building_level">
+				<option value="1">1</option>
+				<option value="2">2</option>
+				<option value="3">3</option>
+				<option value="4">4</option>
+				<option value="5">5</option>
+				<option value="6">6</option>
+				<option value="7">7</option>
+				<option value="8">8</option>
+				<option value="9">9</option>
+				<option value="10">10</option>
+				<option value="11">11</option>
+				<option value="12">12</option>
+				<option value="13">13</option>
+				<option value="14">14</option>
+				<option value="15">15</option>
+				<option value="16">16</option>
+				<option value="17">17</option>
+				<option value="18">18</option>
+				<option value="19">19</option>
+				<option value="20">20</option>
+				<option value="21">21</option>
+				<option value="22">22</option>
+				<option value="23">23</option>
+				<option value="24">24</option>
+				<option value="25">25</option>
+				<option value="26">26</option>
+				<option value="27">27</option>
+				<option value="28">28</option>
+				<option value="29">29</option>
+				<option value="30">30</option>
+				<option value="31">31</option>
+				<option value="32">32</option>
+				<option value="33">33</option>
+				<option value="34">34</option>
+				<option value="35">35</option>
+			  </select><br/>
+                <select id="isuelt">
+                    <option value="none">No Isuelt Gear</option>
+                    <option value="orange">Orange Isuelt</option>
+                    <option value="purple">Purple Isuelt</option>
+                    <option value="blue">Blue Isuelt</option>
+                </select>
+              <button id="get-data">Get Data</button>
+                <hr/>
+			  <div id="show-data"></div>			
+        </div>
+      </div>
+    </div>
+  </body>
+</html>

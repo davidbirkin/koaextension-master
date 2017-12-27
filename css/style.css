@@ -1,0 +1,104 @@
+  body {
+    min-width: 200px;
+    max-width: 300px;
+    margin: 10px;
+    white-space: nowrap;
+    font-family: sans-serif;
+  }
+
+  h1 {
+    font-size: 15px;
+  }
+
+  #container {
+    font-size: 12px;
+    align-items: center;
+    display: flex;
+    justify-content: space-between;
+  }
+
+  #rssdropdown {
+    display: block; 
+    width: 150px; 
+    margin-top: 5px;  
+    padding: 5px 5px;
+  }
+
+  .amount {
+    float:left;
+    text-align:right;
+    width:60px;
+    /*border: solid 1px black;*/
+    margin: 5px 5px;
+    padding: 5px 5px;
+    font-size: 12px;
+  }
+
+  .amountinput {
+    text-align:right;
+    width:80px;
+    
+    margin: 5px 5px;
+    font-size: 12px;
+    padding: 5px 5px;
+  }
+
+  .totalamount {
+    float:left;
+    text-align:right;
+    width:60px;
+    border: solid 1px black;
+    margin: 5px 5px;
+    padding:5px 5px;
+  }
+
+#building_type {
+    width: 200px;
+    padding: 5px 5px;
+}
+
+#building_level {
+    width: 50px;
+    padding: 5px 5px;
+}
+
+#isuelt {
+    margin-top: 3px;
+    width: 180px;
+    padding: 5px 5px;
+}
+
+#get-data {
+    margin-top: 3px;
+    width: 70px; 
+    padding: 5px 5px
+}
+
+ul#picker { 
+    list-style: none;
+    margin: 0; 
+    padding: 0;
+    text-align: center;
+}
+
+ul#picker li { 
+    display: block;
+    width: 120px;
+    margin: 0;
+    float: left;
+    padding: 10px 1px;
+    border: solid 1px grey;
+    margin-right: 3px;
+}
+
+#picker .left {
+    margin-right: 3px;
+}
+
+#picker .top {
+    margin-bottom: 3px;
+}
+
+#clearfloat { 
+    clear: both;
+}

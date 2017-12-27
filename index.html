@@ -6,57 +6,7 @@
  -->
 <html>
   <head>
-    <title>KOA Resource CheckerB</title>
-    <style type="text/css">
-      body {
-        min-width: 200px;
-        max-width: 300px;
-        margin: 10px;
-        white-space: nowrap;
-        font-family: sans-serif;
-      }
-
-      h1 {
-        font-size: 15px;
-      }
-
-      #container {
-        font-size: 12px;
-        align-items: center;
-        display: flex;
-        justify-content: space-between;
-      }
-      
-      #rssdropdown {
-        display: block; width: 100px; margin-top: 5px;      
-      }
-      .amount {
-        float:left;
-        text-align:right;
-        width:60px;
-        /*border: solid 1px black;*/
-        margin: 5px 5px;
-        font-size: 12px;
-      }
-      
-      .amountinput {
-        text-align:right;
-        width:70px;
-        border-radius:5px 5px;
-        margin: 5px 5px;
-        font-size: 12px;
-      }
-      
-      .totalamount {
-        float:left;
-        text-align:right;
-        width:60px;
-        border: solid 1px black;
-        margin: 5px 5px;
-        padding:5px 5px;
-      }
-    </style>
-
+    <title>KOA Resource Companion</title>
     <!--
       - JavaScript and HTML must be in separate files: see our Content Security
       - Policy documentation[1] for details and explanation.
@@ -69,15 +19,23 @@
     <script src="js/wood.js"></script>
     <script src="js/iron.js"></script>
     <script src="js/silver.js"></script>
+    <link rel="stylesheet" type="text/css" href="css/style.css">
   </head>
-
   <body>
-    <h1>King of Avalon Resource Checker!</h1>
+    <h1>King of Avalon Companion!</h1>
     <div id="container">
       <div id="selection">
-          What would you like to do?<br/>
+          <!--
           <input type="radio" name="calcrss" id="calcradio"/>&nbsp;Calculate RSS
-          <input type="radio" name="calcrss" id="lookupradio"/>&nbsp;Lookup Upgrades<br/><hr/>
+          <input type="radio" name="calcrss" id="lookupradio"/>&nbsp;Lookup Upgrades<br/>-->
+          <ul id="picker"> 
+            <li class="top" id="calcradio">Calculate RSS</li>
+            <li class="top" id="lookupradio">Check Upgrades</li>
+            <!-- <li class="left">Check Prestige</li> -->
+            <!--<li class="">TBA</li>-->
+          </ul>
+          <div id="clearfloat"></div>
+          <hr/>
         <!-- THIS DIV HERE IS USED TO CALCULATE RESOURCES AND SHOULD ONLY APPEAR 
             ONCE THE "CALCULATE RSS" RADIO BUTTON HAS BEEN SELECTED -->
         <div id="calcrss">
@@ -94,45 +52,63 @@
             <hr />
             <div id="food" class="resource" style="display:none">
               <span>Enter Food Denominations</span><hr />
-              <div><span class='amount'>1000 x </span><input type="number" class="amountinput" id="food1" value="0"/><span id="f1" class="totalmount"></span></div><hr />
-              <div><span class='amount'>3000 x </span><input type="number" class="amountinput" id="food2" value="0"/><span id="f2" class="totalmount"></span></div><hr />
-              <div><span class='amount'>5000 x </span><input type="number" class="amountinput" id="food3" value="0"/><span id="f3" class="totalmount"></span></div><hr />
-              <div><span class='amount'>10,000 x </span><input type="number" class="amountinput" id="food4" value="0"/><span id="f4" class="totalmount"></span></div><hr />
-              <div><span class='amount'>30,000 x </span><input type="number" class="amountinput" id="food5" value="0"/><span id="f5" class="totalmount"></span></div><hr />
-              <div><span class='amount'>50,000 x </span><input type="number" class="amountinput" id="food6" value="0"/><span id="f6" class="totalmount"></span></div><hr />
-              <div><span class='amount'>150,000 x </span><input type="number" class="amountinput" id="food7" value="0"/><span id="f7" class="totalmount"></span></div><hr />
+              <div><span class='amount'>1000 x </span><input type="number" class="amountinput" id="food1" value="0"/><span id="f1" class="totalmount"></span></div>
+              <div><span class='amount'>3000 x </span><input type="number" class="amountinput" id="food2" value="0"/><span id="f2" class="totalmount"></span></div>
+              <div><span class='amount'>5000 x </span><input type="number" class="amountinput" id="food3" value="0"/><span id="f3" class="totalmount"></span></div>
+              <div><span class='amount'>10,000 x </span><input type="number" class="amountinput" id="food4" value="0"/><span id="f4" class="totalmount"></span></div>
+              <div><span class='amount'>30,000 x </span><input type="number" class="amountinput" id="food5" value="0"/><span id="f5" class="totalmount"></span></div>
+              <div><span class='amount'>50,000 x </span><input type="number" class="amountinput" id="food6" value="0"/><span id="f6" class="totalmount"></span></div>
+              <div><span class='amount'>150,000 x </span><input type="number" class="amountinput" id="food7" value="0"/><span id="f7" class="totalmount"></span></div>
+              <div><span class='amount'>500,000 x </span><input type="number" class="amountinput" id="food8" value="0"/><span id="f8" class="totalmount"></span></div>
+              <div><span class='amount'>1,500,000 x </span><input type="number" class="amountinput" id="food9" value="0"/><span id="f9" class="totalmount"></span></div><hr />
               <div><span class="amountinput">Total : </span><span id="ft" class="totalmount"></span></div><hr />    
             </div>
             <div id="wood" class="resource" style="display:none">
               <span>Enter Wood Denominations</span><hr />
-              <div><span class='amount'>1000 x </span><input type="number" class="amountinput" id="wood1" value="0"/><span id="w1" class="totalmount"></span></div><hr />
-              <div><span class='amount'>3000 x </span><input type="number" class="amountinput" id="wood2" value="0"/><span id="w2" class="totalmount"></span></div><hr />
-              <div><span class='amount'>5000 x </span><input type="number" class="amountinput" id="wood3" value="0"/><span id="w3" class="totalmount"></span></div><hr />
-              <div><span class='amount'>10,000 x </span><input type="number" class="amountinput" id="wood4" value="0"/><span id="w4" class="totalmount"></span></div><hr />
-              <div><span class='amount'>30,000 x </span><input type="number" class="amountinput" id="wood5" value="0"/><span id="w5" class="totalmount"></span></div><hr />
-              <div><span class='amount'>50,000 x </span><input type="number" class="amountinput" id="wood6" value="0"/><span id="w6" class="totalmount"></span></div><hr />
-              <div><span class='amount'>150,000 x </span><input type="number" class="amountinput" id="wood7" value="0"/><span id="w7" class="totalmount"></span></div><hr />
+              <div><span class='amount'>1000 x </span><input type="number" class="amountinput" id="wood1" value="0"/><span id="w1" class="totalmount"></span></div>
+              <div><span class='amount'>3000 x </span><input type="number" class="amountinput" id="wood2" value="0"/><span id="w2" class="totalmount"></span></div>
+              <div><span class='amount'>5000 x </span><input type="number" class="amountinput" id="wood3" value="0"/><span id="w3" class="totalmount"></span></div>
+              <div><span class='amount'>10,000 x </span><input type="number" class="amountinput" id="wood4" value="0"/><span id="w4" class="totalmount"></span></div>
+              <div><span class='amount'>30,000 x </span><input type="number" class="amountinput" id="wood5" value="0"/><span id="w5" class="totalmount"></span></div>
+              <div><span class='amount'>50,000 x </span><input type="number" class="amountinput" id="wood6" value="0"/><span id="w6" class="totalmount"></span></div>
+              <div><span class='amount'>150,000 x </span><input type="number" class="amountinput" id="wood7" value="0"/><span id="w7" class="totalmount"></span></div>
+              <div><span class='amount'>500,000 x </span><input type="number" class="amountinput" id="wood8" value="0"/><span id="w8" class="totalmount"></span></div>
+              <div><span class='amount'>1,500,000 x </span><input type="number" class="amountinput" id="wood9" value="0"/><span id="w9" class="totalmount"></span></div><hr />
               <div><span class="amountinput">Total: </span><span id="wt" class="totalmount"></span></div><hr />
             </div>
+            <!--
+                100,000 
+                300,000 
+            -->
             <div id="iron" class="resource" style="display:none">
               <span>Enter Iron Denominations</span><hr />
-              <div><span class='amount'>200 x </span><input type="number" class="amountinput" id="iron1" value="0"/><span id="i1" class="totalmount"></span></div><hr />
-              <div><span class='amount'>600 x </span><input type="number" class="amountinput" id="iron2" value="0"/><span id="i2" class="totalmount"></span></div><hr />
-              <div><span class='amount'>1000 x </span><input type="number" class="amountinput" id="iron3" value="0"/><span id="i3" class="totalmount"></span></div><hr />
-              <div><span class='amount'>2000 x </span><input type="number" class="amountinput" id="iron4" value="0"/><span id="i4" class="totalmount"></span></div><hr />
-              <div><span class='amount'>6000 x </span><input type="number" class="amountinput" id="iron5" value="0"/><span id="i5" class="totalmount"></span></div><hr />
-              <div><span class='amount'>10,000 x </span><input type="number" class="amountinput" id="iron6" value="0"/><span id="i6" class="totalmount"></span></div><hr />
-              <div><span class='amount'>30,000 x </span><input type="number" class="amountinput" id="iron7" value="0"/><span id="i7" class="totalmount"></span></div><hr />
+              <div><span class='amount'>200 x </span><input type="number" class="amountinput" id="iron1" value="0"/><span id="i1" class="totalmount"></span></div>
+              <div><span class='amount'>600 x </span><input type="number" class="amountinput" id="iron2" value="0"/><span id="i2" class="totalmount"></span></div>
+              <div><span class='amount'>1000 x </span><input type="number" class="amountinput" id="iron3" value="0"/><span id="i3" class="totalmount"></span></div>
+              <div><span class='amount'>2000 x </span><input type="number" class="amountinput" id="iron4" value="0"/><span id="i4" class="totalmount"></span></div>
+              <div><span class='amount'>6000 x </span><input type="number" class="amountinput" id="iron5" value="0"/><span id="i5" class="totalmount"></span></div>
+              <div><span class='amount'>10,000 x </span><input type="number" class="amountinput" id="iron6" value="0"/><span id="i6" class="totalmount"></span></div>
+              <div><span class='amount'>30,000 x </span><input type="number" class="amountinput" id="iron7" value="0"/><span id="i7" class="totalmount"></span></div>
+              <div><span class='amount'>100,000 x </span><input type="number" class="amountinput" id="iron8" value="0"/><span id="i8" class="totalmount"></span></div>
+              <div><span class='amount'>300,000 x </span><input type="number" class="amountinput" id="iron9" value="0"/><span id="i9" class="totalmount"></span></div><hr />
               <div><span class="amountinput">Total: </span><span id="it" class="totalmount"></span></div><hr />
             </div>
+            <!--
+                7,500 
+                25,000 
+                75,000
+            -->
             <div id="silver" class="resource" style="display:none">
               <span>Enter Silver Denominations</span><hr />
-              <div><span class='amount'>50 x </span><input type="number" class="amountinput" id="silver1" value="0"/><span id="s1" class="totalmount"></span></div><hr />
-              <div><span class='amount'>150 x </span><input type="number" class="amountinput" id="silver2"  value="0"/><span id="s2" class="totalmount"></span></div><hr />
-              <div><span class='amount'>250 x </span><input type="number" class="amountinput" id="silver3" value="0"/><span id="s3" class="totalmount"></span></div><hr />
-              <div><span class='amount'>500 x </span><input type="number" class="amountinput" id="silver4"  value="0"/><span id="s4" class="totalmount"></span></div><hr />
-              <div><span class='amount'>1500 x </span><input type="number" class="amountinput" id="silver5" value="0"/><span id="s5" class="totalmount"></span></div><hr />
-              <div><span class='amount'>2500 x </span><input type="number" class="amountinput" id="silver6" value="0"/><span id="s6" class="totalmount"></span></div><hr />
+              <div><span class='amount'>50 x </span><input type="number" class="amountinput" id="silver1" value="0"/><span id="s1" class="totalmount"></span></div>
+              <div><span class='amount'>150 x </span><input type="number" class="amountinput" id="silver2"  value="0"/><span id="s2" class="totalmount"></span></div>
+              <div><span class='amount'>250 x </span><input type="number" class="amountinput" id="silver3" value="0"/><span id="s3" class="totalmount"></span></div>
+              <div><span class='amount'>500 x </span><input type="number" class="amountinput" id="silver4"  value="0"/><span id="s4" class="totalmount"></span></div>
+              <div><span class='amount'>1500 x </span><input type="number" class="amountinput" id="silver5" value="0"/><span id="s5" class="totalmount"></span></div>
+              <div><span class='amount'>2500 x </span><input type="number" class="amountinput" id="silver6" value="0"/><span id="s6" class="totalmount"></span></div>
+              <div><span class='amount'>7500 x </span><input type="number" class="amountinput" id="silver7" value="0"/><span id="s7" class="totalmount"></span></div>
+              <div><span class='amount'>25,000 x </span><input type="number" class="amountinput" id="silver8" value="0"/><span id="s8" class="totalmount"></span></div>
+              <div><span class='amount'>75,000 x </span><input type="number" class="amountinput" id="silver9" value="0"/><span id="s9" class="totalmount"></span></div><hr />
               <div><span class="amountinput">Total: </span><span id="st" class="totalmount"></span></div><hr />
             </div>
         </div>
@@ -200,13 +176,17 @@
 				<option value="33">33</option>
 				<option value="34">34</option>
 				<option value="35">35</option>
-			  </select>
-			  <div id="show-data">
-		
-			</div>
-			<button id="get-data">Get Data</button>
+			  </select><br/>
+                <select id="isuelt">
+                    <option value="none">No Isuelt Gear</option>
+                    <option value="orange">Orange Isuelt</option>
+                    <option value="purple">Purple Isuelt</option>
+                    <option value="blue">Blue Isuelt</option>
+                </select>
+              <button id="get-data">Get Data</button>
+                <hr/>
+			  <div id="show-data"></div>			
         </div>
-		
       </div>
     </div>
   </body>

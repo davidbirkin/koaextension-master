@@ -66,6 +66,24 @@ $(function() {
     });
 });
 
+$(function() {
+    $("#food8").on('keyup change mousedown', function (){
+        var f8m = document.getElementById('food8').value;
+        var f8r = f8m * 500000;
+        document.getElementById('f8').innerHTML = numberWithCommas(f8r);
+        gettotalfood();
+    });
+});
+
+$(function() {
+    $("#food9").on('keyup change mousedown', function (){
+        var f9m = document.getElementById('food9').value;
+        var f9r = f9m * 1500000;
+        document.getElementById('f9').innerHTML = numberWithCommas(f9r);
+        gettotalfood();
+    });
+});
+
 function gettotalfood(){ 
     var total = 0;
     var f1r = document.getElementById('food1').value * 1000;
@@ -75,6 +93,8 @@ function gettotalfood(){
     var f5r = document.getElementById('food5').value * 30000;
     var f6r = document.getElementById('food6').value * 50000;
     var f7r = document.getElementById('food7').value * 150000;
-    total = total + f1r + f2r + f3r + f4r + f5r + f6r + f7r;
+    var f8r = document.getElementById('food8').value * 500000;
+    var f9r = document.getElementById('food9').value * 1500000;
+    total = total + f1r + f2r + f3r + f4r + f5r + f6r + f7r + f8r + f9r;
     document.getElementById('ft').innerHTML = numberWithCommas(total);
 };

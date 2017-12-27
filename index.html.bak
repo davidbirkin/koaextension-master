@@ -26,17 +26,8 @@
     <div id="container">
       <div id="selection">
           What would you like to do?<br/>
-          <!--
           <input type="radio" name="calcrss" id="calcradio"/>&nbsp;Calculate RSS
-          <input type="radio" name="calcrss" id="lookupradio"/>&nbsp;Lookup Upgrades<br/>-->
-          <ul id="picker"> 
-            <li class="left top" id="calcradio">Calculate RSS</li>
-            <li class="top" id="lookupradio">Check Upgrades</li>
-            <li class="left">Check Prestige</li>
-            <!--<li class="">TBA</li>-->
-          </ul>
-          <div id="clearfloat"></div>
-          <hr/>
+          <input type="radio" name="calcrss" id="lookupradio"/>&nbsp;Lookup Upgrades<br/><hr/>
         <!-- THIS DIV HERE IS USED TO CALCULATE RESOURCES AND SHOULD ONLY APPEAR 
             ONCE THE "CALCULATE RSS" RADIO BUTTON HAS BEEN SELECTED -->
         <div id="calcrss">

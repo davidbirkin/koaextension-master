@@ -20,7 +20,6 @@
   #rssdropdown {
     display: block; width: 100px; margin-top: 5px;      
   }
-
   .amount {
     float:left;
     text-align:right;
@@ -47,6 +46,7 @@
     padding:5px 5px;
   }
 
+
 #building_type {
     width: 200px;
     padding: 5px 5px;
@@ -67,32 +67,4 @@
     margin-top: 3px;
     width: 70px; 
     padding: 5px 5px
-}
-
-ul#picker { 
-    list-style: none;
-    margin: 0; 
-    padding: 0;
-    text-align: center;
-}
-
-ul#picker li { 
-    display: block;
-    width: 47%;
-    margin: 0;
-    float: left;
-    padding: 10px 1px;
-    border: solid 1px grey
-}
-
-#picker .left {
-    margin-right: 3px;
-}
-
-#picker .top {
-    margin-bottom: 3px;
-}
-
-#clearfloat { 
-    clear: both;
 }

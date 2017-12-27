@@ -15,6 +15,8 @@
     -->
     <script src="js/jquery-3.2.1.min.js"></script>
     <script src="js/globalfunction.js"></script>
+    <script src="js/upgrades.js"></script>
+    <script src="js/prestige.js"></script>  
     <script src="js/food.js"></script>
     <script src="js/wood.js"></script>
     <script src="js/iron.js"></script>
@@ -31,7 +33,7 @@
           <ul id="picker"> 
             <li class="top" id="calcradio">Calculate RSS</li>
             <li class="top" id="lookupradio">Check Upgrades</li>
-            <!-- <li class="left">Check Prestige</li> -->
+            <li class="top" id="prestigebtn">Check Prestige</li>
             <!--<li class="">TBA</li>-->
           </ul>
           <div id="clearfloat"></div>
@@ -76,10 +78,6 @@
               <div><span class='amount'>1,500,000 x </span><input type="number" class="amountinput" id="wood9" value="0"/><span id="w9" class="totalmount"></span></div><hr />
               <div><span class="amountinput">Total: </span><span id="wt" class="totalmount"></span></div><hr />
             </div>
-            <!--
-                100,000 
-                300,000 
-            -->
             <div id="iron" class="resource" style="display:none">
               <span>Enter Iron Denominations</span><hr />
               <div><span class='amount'>200 x </span><input type="number" class="amountinput" id="iron1" value="0"/><span id="i1" class="totalmount"></span></div>
@@ -93,11 +91,6 @@
               <div><span class='amount'>300,000 x </span><input type="number" class="amountinput" id="iron9" value="0"/><span id="i9" class="totalmount"></span></div><hr />
               <div><span class="amountinput">Total: </span><span id="it" class="totalmount"></span></div><hr />
             </div>
-            <!--
-                7,500 
-                25,000 
-                75,000
-            -->
             <div id="silver" class="resource" style="display:none">
               <span>Enter Silver Denominations</span><hr />
               <div><span class='amount'>50 x </span><input type="number" class="amountinput" id="silver1" value="0"/><span id="s1" class="totalmount"></span></div>
@@ -113,7 +106,7 @@
             </div>
         </div>
         <!-- THIS DIV HERE IS USED TO CALCULATE RESOURCES AND SHOULD ONLY APPEAR 
-            ONCE THE "LOOKUP UPGRADES" RADIO BUTTON HAS BEEN SELECTED -->
+            ONCE THE "CHECK UPGRADES" RADIO BUTTON HAS BEEN SELECTED -->
         <div id="lookupupgrades">
               <select id="building_type">
 			    <option value="Barracks">Barracks</option>
@@ -135,7 +128,7 @@
 				<option value="Trading Post">Trading Post</option>
 				<option value="Trap Factory">Trap Factory</option>
 				<option value="University">University</option>
-				<option value="Walls">Walls</option>
+				<option value="Wall">Walls</option>
 				<option value="Watchtower">Watchtower</option>
 				<option value="Wishing Well">Wishing Well</option>
 			  </select>
@@ -186,6 +179,66 @@
               <button id="get-data">Get Data</button>
                 <hr/>
 			  <div id="show-data"></div>			
+        </div>
+        <!-- THIS DIV HERE IS USED TO CALCULATE RESOURCES AND SHOULD ONLY APPEAR 
+            ONCE THE "CHECK PRESTIGE" RADIO BUTTON HAS BEEN SELECTED -->
+        <div id="lookupprestige">
+            <select id="building_type_p">
+			    <option value="Barracks">Barracks</option>
+				<option value="Dragon Lair">Dragon Lair</option>
+				<option value="Embassy">Embassy</option>
+				<option value="Forge">Forge</option>
+				<option value="Hall of War">Hall of War</option>
+				<option value="Hospital">Hospital</option>
+				<option value="Military Tent">Military Tent</option>
+				<option value="Range">Range</option>
+				<option value="Siege Workshop">Siege Workshop</option>
+				<option value="Stables">Stables</option>
+				<option value="Storehouse">Storehouse</option>
+				<option value="Stronghold">Stronghold</option>
+				<option value="Trading Post">Trading Post</option>
+				<option value="Trap Factory">Trap Factory</option>
+				<option value="University">University</option>
+				<option value="Wall">Walls</option>
+				<option value="Watchtower">Watchtower</option>
+				<option value="Wishing Well">Wishing Well</option>
+            </select> 
+            <select id="building_level_p">
+				<option value="1">1</option>
+				<option value="2">2</option>
+				<option value="3">3</option>
+				<option value="4">4</option>
+				<option value="5">5</option>
+				<option value="6">6</option>
+				<option value="7">7</option>
+				<option value="8">8</option>
+				<option value="9">9</option>
+				<option value="10">10</option>
+				<option value="11">11</option>
+				<option value="12">12</option>
+				<option value="13">13</option>
+				<option value="14">14</option>
+				<option value="15">15</option>
+				<option value="16">16</option>
+				<option value="17">17</option>
+				<option value="18">18</option>
+				<option value="19">19</option>
+				<option value="20">20</option>
+				<option value="21">21</option>
+				<option value="22">22</option>
+				<option value="23">23</option>
+				<option value="24">24</option>
+				<option value="25">25</option>
+				<option value="26">26</option>
+				<option value="27">27</option>
+				<option value="28">28</option>
+				<option value="29">29</option>
+				<option value="30">30</option>
+			  </select>
+              <br/>
+              <button id="get-p">Get Data</button>
+              <hr/>
+			  <div id="show-p"></div>
         </div>
       </div>
     </div>

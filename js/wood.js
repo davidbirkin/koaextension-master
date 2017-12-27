@@ -82,7 +82,7 @@ $(function() {
         document.getElementById('w9').innerHTML = numberWithCommas(w9r);
         gettotalwood();
     });
-});w
+});
 
 function gettotalwood(){ 
     var total = 0;

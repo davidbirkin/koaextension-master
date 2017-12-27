@@ -3,7 +3,7 @@
 
   "name": "(Unoffical) King of Avalon Companion",
   "description": "Extension to assist with King of Avalon. Work out resources you have and also requirements for upgrading any of your buildings!",
-  "version": "2.3.2",
+  "version": "3.0.0",
   
   "browser_action": {
 	"default_icon": "icon.png",

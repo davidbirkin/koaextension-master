@@ -1,5 +1,5 @@
   body {
-    min-width: 200px;
+    min-width: 270px;
     max-width: 300px;
     margin: 10px;
     white-space: nowrap;
@@ -37,7 +37,6 @@
   .amountinput {
     text-align:right;
     width:80px;
-    
     margin: 5px 5px;
     font-size: 12px;
     padding: 5px 5px;

@@ -1,0 +1,70 @@
+  body {
+    min-width: 200px;
+    max-width: 300px;
+    margin: 10px;
+    white-space: nowrap;
+    font-family: sans-serif;
+  }
+
+  h1 {
+    font-size: 15px;
+  }
+
+  #container {
+    font-size: 12px;
+    align-items: center;
+    display: flex;
+    justify-content: space-between;
+  }
+
+  #rssdropdown {
+    display: block; width: 100px; margin-top: 5px;      
+  }
+  .amount {
+    float:left;
+    text-align:right;
+    width:60px;
+    /*border: solid 1px black;*/
+    margin: 5px 5px;
+    font-size: 12px;
+  }
+
+  .amountinput {
+    text-align:right;
+    width:70px;
+    border-radius:5px 5px;
+    margin: 5px 5px;
+    font-size: 12px;
+  }
+
+  .totalamount {
+    float:left;
+    text-align:right;
+    width:60px;
+    border: solid 1px black;
+    margin: 5px 5px;
+    padding:5px 5px;
+  }
+
+
+#building_type {
+    width: 200px;
+    padding: 5px 5px;
+}
+
+#building_level {
+    width: 50px;
+    padding: 5px 5px;
+}
+
+#isuelt {
+    margin-top: 3px;
+    width: 180px;
+    padding: 5px 5px;
+}
+
+#get-data {
+    margin-top: 3px;
+    width: 70px; 
+    padding: 5px 5px
+}

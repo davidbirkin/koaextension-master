@@ -6,57 +6,7 @@
  -->
 <html>
   <head>
-    <title>KOA Resource CheckerB</title>
-    <style type="text/css">
-      body {
-        min-width: 200px;
-        max-width: 300px;
-        margin: 10px;
-        white-space: nowrap;
-        font-family: sans-serif;
-      }
-
-      h1 {
-        font-size: 15px;
-      }
-
-      #container {
-        font-size: 12px;
-        align-items: center;
-        display: flex;
-        justify-content: space-between;
-      }
-      
-      #rssdropdown {
-        display: block; width: 100px; margin-top: 5px;      
-      }
-      .amount {
-        float:left;
-        text-align:right;
-        width:60px;
-        /*border: solid 1px black;*/
-        margin: 5px 5px;
-        font-size: 12px;
-      }
-      
-      .amountinput {
-        text-align:right;
-        width:70px;
-        border-radius:5px 5px;
-        margin: 5px 5px;
-        font-size: 12px;
-      }
-      
-      .totalamount {
-        float:left;
-        text-align:right;
-        width:60px;
-        border: solid 1px black;
-        margin: 5px 5px;
-        padding:5px 5px;
-      }
-    </style>
-
+    <title>KOA Resource Companion</title>
     <!--
       - JavaScript and HTML must be in separate files: see our Content Security
       - Policy documentation[1] for details and explanation.
@@ -69,10 +19,10 @@
     <script src="js/wood.js"></script>
     <script src="js/iron.js"></script>
     <script src="js/silver.js"></script>
+    <link rel="stylesheet" type="text/css" href="css/style.css">
   </head>
-
   <body>
-    <h1>King of Avalon Resource Checker!</h1>
+    <h1>King of Avalon Companion!</h1>
     <div id="container">
       <div id="selection">
           What would you like to do?<br/>
@@ -200,13 +150,17 @@
 				<option value="33">33</option>
 				<option value="34">34</option>
 				<option value="35">35</option>
-			  </select>
-			  <div id="show-data">
-		
-			</div>
-			<button id="get-data">Get Data</button>
+			  </select><br/>
+                <select id="isuelt">
+                    <option value="none">No Isuelt Gear</option>
+                    <option value="orange">Orange Isuelt</option>
+                    <option value="purple">Purple Isuelt</option>
+                    <option value="blue">Blue Isuelt</option>
+                </select>
+              <button id="get-data">Get Data</button>
+                <hr/>
+			  <div id="show-data"></div>			
         </div>
-		
       </div>
     </div>
   </body>

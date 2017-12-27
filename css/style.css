@@ -4,6 +4,7 @@
     margin: 10px;
     white-space: nowrap;
     font-family: sans-serif;
+    background-color: #ad946d;
   }
 
   h1 {
@@ -54,23 +55,28 @@
 #building_type, #building_type_p {
     width: 200px;
     padding: 5px 5px;
+    background-color: #dad27e;
 }
 
 #building_level, #building_level_p {
     width: 50px;
     padding: 5px 5px;
+    background-color: #dad27e;
 }
 
 #get-data, #get-p {
     margin-top: 3px;
     width: 70px; 
-    padding: 5px 5px
+    padding: 5px 5px;
+    background-color: #dad27e;
+        
 }
 
 #isuelt {
     margin-top: 3px;
     width: 180px;
     padding: 5px 5px;
+    background-color: #dad27e;
 }
 
 ul#picker { 
@@ -88,6 +94,7 @@ ul#picker li {
     padding: 10px 1px;
     border: solid 1px grey;
     margin-right: 3px;
+    background-color: #dad27e;
 }
 
 #picker .left {

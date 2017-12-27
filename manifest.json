@@ -2,7 +2,7 @@
   "manifest_version": 2,
 
   "name": "(Unoffical) King of Avalon Companion",
-  "description": "Extension to assist with King of Avalon. Work out resources you have stored and also requirements for upgrading any of your building!",
+  "description": "Extension to assist with King of Avalon. Work out resources you have and also requirements for upgrading any of your buildings!",
   "version": "2.2.1",
   
   "browser_action": {

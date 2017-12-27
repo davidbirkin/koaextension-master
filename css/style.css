@@ -18,7 +18,10 @@
   }
 
   #rssdropdown {
-    display: block; width: 100px; margin-top: 5px;      
+    display: block; 
+    width: 150px; 
+    margin-top: 5px;  
+    padding: 5px 5px;
   }
 
   .amount {
@@ -27,15 +30,17 @@
     width:60px;
     /*border: solid 1px black;*/
     margin: 5px 5px;
+    padding: 5px 5px;
     font-size: 12px;
   }
 
   .amountinput {
     text-align:right;
-    width:70px;
-    border-radius:5px 5px;
+    width:80px;
+    
     margin: 5px 5px;
     font-size: 12px;
+    padding: 5px 5px;
   }
 
   .totalamount {
@@ -78,11 +83,12 @@ ul#picker {
 
 ul#picker li { 
     display: block;
-    width: 47%;
+    width: 120px;
     margin: 0;
     float: left;
     padding: 10px 1px;
-    border: solid 1px grey
+    border: solid 1px grey;
+    margin-right: 3px;
 }
 
 #picker .left {

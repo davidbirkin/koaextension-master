@@ -66,6 +66,24 @@ $(function() {
     });
 });
 
+$(function() {
+    $("#iron8").on('keyup change mousedown', function (){
+        var i8m = document.getElementById('iron8').value;
+        var i8r = i8m * 100000;
+        document.getElementById('i8').innerHTML = numberWithCommas(i8r);
+        gettotaliron();
+    });
+});
+
+$(function() {
+    $("#iron9").on('keyup change mousedown', function (){
+        var i9m = document.getElementById('iron9').value;
+        var i9r = i9m * 300000;
+        document.getElementById('i9').innerHTML = numberWithCommas(i9r);
+        gettotaliron();
+    });
+});
+
 function gettotaliron(){ 
     var total = 0;
     var i1r = document.getElementById('iron1').value * 200;
@@ -75,6 +93,8 @@ function gettotaliron(){
     var i5r = document.getElementById('iron5').value * 6000;
     var i6r = document.getElementById('iron6').value * 10000;
     var i7r = document.getElementById('iron7').value * 30000;
-    total = total + i1r + i2r + i3r + i4r + i5r + i6r + i7r;
+    var i8r = document.getElementById('iron8').value * 100000;
+    var i9r = document.getElementById('iron9').value * 300000;
+    total = total + i1r + i2r + i3r + i4r + i5r + i6r + i7r + i8r + i9r;
     document.getElementById('it').innerHTML = numberWithCommas(total);
 };

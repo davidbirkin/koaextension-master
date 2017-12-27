@@ -1,5 +1,5 @@
   body {
-    min-width: 200px;
+    min-width: 270px;
     max-width: 300px;
     margin: 10px;
     white-space: nowrap;
@@ -37,7 +37,6 @@
   .amountinput {
     text-align:right;
     width:80px;
-    
     margin: 5px 5px;
     font-size: 12px;
     padding: 5px 5px;
@@ -52,26 +51,26 @@
     padding:5px 5px;
   }
 
-#building_type {
+#building_type, #building_type_p {
     width: 200px;
     padding: 5px 5px;
 }
 
-#building_level {
+#building_level, #building_level_p {
     width: 50px;
     padding: 5px 5px;
+}
+
+#get-data, #get-p {
+    margin-top: 3px;
+    width: 70px; 
+    padding: 5px 5px
 }
 
 #isuelt {
     margin-top: 3px;
     width: 180px;
     padding: 5px 5px;
-}
-
-#get-data {
-    margin-top: 3px;
-    width: 70px; 
-    padding: 5px 5px
 }
 
 ul#picker { 
